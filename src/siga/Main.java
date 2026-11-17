@@ -15,7 +15,7 @@ public class Main {
 
         System.out.println();
         System.out.println("1) Importação a partir do sistema legado");
-        ImportadorAlunos importador = new ImportadorAlunos(servicoLegado, alunoDAO);
+        ImportadorAlunos importador = new ImportadorAlunos(fonte, alunoDAO);
         System.out.println("   Alunos importados: " + importador.importar());
         System.out.println("   Situação segundo o importador:");
         for (Aluno aluno : alunoDAO.listarTodos()) {
