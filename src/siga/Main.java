@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         SecretariaLegadoWS servicoLegado = new SecretariaLegadoWS();
         AlunoDAO alunoDAO = new AlunoDAOMemoria();
+        FonteDeAlunos fonte = new AdaptadorSecretariaLegado(servicoLegado);
 
         System.out.println("=== SIGA — Aula 10: Adapter e Facade (código inicial) ===");
 
@@ -23,7 +24,7 @@ public class Main {
 
         System.out.println();
         System.out.println("2) O mesmo dado, convertido por outro trecho do sistema");
-        new RelatorioSituacao(servicoLegado).imprimir();
+        new RelatorioSituacao(fonte).imprimir();
         System.out.println("   >> DESLIZE 1: a aluna 2024003 aparece INATIVA acima e ATIVA aqui.");
         System.out.println("      A conversão existe em dois lugares, e as versões divergiram.");
         System.out.println("   >> DESLIZE 2: o importador depende da classe concreta do legado.");
